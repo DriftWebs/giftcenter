@@ -1,0 +1,133 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Mantiene el contenido centrado verticalmente */
+}
+
+/* Barra lateral flotante */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    background-color: #2c2c2c; /* Fondo oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinear los botones al principio de la barra */
+    padding-top: 20px;
+    z-index: 1000; /* Asegura que la barra lateral siempre esté en frente del contenido */
+}
+
+.sidebar-btn {
+    background: none;
+    border: none;
+    color: #e0e0e0; /* Color del icono */
+    font-size: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar-btn:hover {
+    color: #00bcd4; /* Celeste */
+}
+
+/* Contenedor principal */
+.container {
+    margin-left: 80px; /* Mayor margen para evitar superposición con la barra lateral */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Estilo principal */
+.main-content {
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px; /* Limita el ancho máximo del contenido principal */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilo para el título */
+h1 {
+    color: #00bcd4; /* Celeste */
+    margin-bottom: 20px;
+}
+
+/* Contenedor de imagen grande */
+.large-image-container {
+    margin: 20px 0;
+    max-width: 60%; /* Reduce el tamaño de la imagen grande */
+    text-align: center;
+}
+
+.large-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil para la imagen */
+}
+
+/* Contenedor de imágenes pequeñas del cómic */
+.comic-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta automáticamente el número de columnas */
+    gap: 15px; /* Espacio entre las imágenes */
+    width: 100%;
+    margin: 20px 0;
+}
+
+.comic-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Mantiene la proporción de las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para las imágenes pequeñas */
+}
+
+/* Estilos responsive para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 50px; /* Ajustar el ancho en pantallas pequeñas */
+    }
+
+    .sidebar-btn {
+        font-size: 20px; /* Reducir el tamaño del icono en pantallas pequeñas */
+    }
+
+    .container {
+        margin-left: 50px; /* Reducir el margen de la izquierda para coincidir con el nuevo tamaño de la barra */
+    }
+
+    .large-image-container {
+        max-width: 90%; /* Permite que la imagen grande ocupe más espacio en pantallas pequeñas */
+    }
+
+    .comic-images {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajustar imágenes para pantallas más pequeñas */
+    }
+
+    .comic-images img {
+        max-width: 100px; /* Reducir el tamaño máximo para pantallas pequeñas */
+    }
+}

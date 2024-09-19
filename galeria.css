@@ -1,0 +1,254 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Barra lateral flotante */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background-color: #2c2c2c; /* Fondo oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar-btn {
+    background: none;
+    border: none;
+    color: #e0e0e0; /* Color del icono */
+    font-size: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar-btn:hover {
+    color: #00bcd4; /* Celeste */
+}
+
+/* Contenedor principal */
+.container {
+    margin-left: 60px; /* Ajusta esto si es necesario para dar espacio a la barra lateral */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Estilo principal */
+.main-content {
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el título */
+h1 {
+    color: #00bcd4; /* Celeste */
+    text-align: center;
+}
+
+/* Cuadrícula de botones */
+.gift-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 800px; /* Opcional: ajusta el ancho máximo del contenedor de botones */
+}
+
+/* Botones de regalo */
+.gift-btn {
+    background-color: #333; /* Fondo oscuro para botones */
+    color: #e0e0e0; /* Texto claro */
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.gift-btn:hover {
+    background-color: #00bcd4; /* Celeste */
+    color: #1e1e1e; /* Texto oscuro */
+}
+
+/* Estilo para el contenedor de la fecha actual */
+#current-date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #00bcd4; /* Color celeste */
+}
+
+#current-date-container i {
+    margin-right: 10px; /* Espacio entre icono y texto */
+}
+
+#current-date {
+    font-size: 18px;
+    color: #e0e0e0; /* Texto claro */
+    font-weight: 500;
+}
+
+/* Botones de regalo */
+.gift-btn {
+    background-color: #555; /* Fondo oscuro para botones */
+    color: #00bcd4; /* Texto claro */
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.gift-btn i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.gift-btn:hover {
+    background-color: #00bcd4; /* Celeste */
+    color: #1e1e1e; /* Texto oscuro */
+}
+
+
+/* Estilo para el contenedor de perfil */
+.profile-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo para la imagen de perfil */
+.profile-img {
+    width: 150px; /* Ancho de la imagen */
+    height: 150px; /* Alto de la imagen */
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover; /* Ajustar imagen al contenedor */
+    margin-bottom: 15px; /* Espacio debajo de la imagen */
+}
+
+
+.profile-name {
+    font-size: 24px;
+    color: #00bcd4; /* Celeste */
+    margin: 10px 0;
+}
+
+.profile-partner {
+    font-size: 18px;
+    color: #e0e0e0; /* Texto claro */
+}
+
+#days-together {
+    font-size: 18px;
+    color: #e0e0e0; /* Texto claro */
+    margin-top: 20px;
+}
+
+/* Estilo para el contador de tiempo restante hasta el próximo 24 */
+#time-until-next-date {
+    font-size: 18px;
+    color: #e0e0e0; /* Texto claro */
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+#time-until-next-date p {
+    margin: 0;
+    padding: 5px;
+    background-color: #333; /* Fondo oscuro para los elementos */
+    border-radius: 5px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+}
+
+#time-until-next-date strong {
+    color: #00bcd4; /* Celeste */
+    margin-right: 5px;
+}
+
+/* Estilo para el contenedor de la galería */
+.gallery-container {
+    padding: 20px;
+}
+
+/* Estilo para el contenedor de las imágenes en cuadrícula */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center; /* Centrar la cuadrícula */
+    max-width: 1000px; /* Ajusta el ancho máximo según tu preferencia */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+/* Estilo para las imágenes de la galería */
+.gallery-img {
+    width: 100%; /* Ajusta el tamaño según el contenedor */
+    height: auto;
+    border: 2px solid #00bcd4; /* Borde celeste para las imágenes */
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
+}
+
+/* Botones de regalo vistos */
+.gift-seen {
+    background-color: #333; /* Un color diferente para los vistos */
+    color: white; /* Color verde para los vistos */
+}
+
+/* Botones de regalo bloqueados */
+.gift-locked {
+    background-color: #444; /* Color gris oscuro para indicar que está bloqueado */
+    color: #aaa; /* Texto en gris claro */
+    cursor: not-allowed; /* Cambiar el cursor para indicar que está deshabilitado */
+}
+
+.gift-locked:hover {
+    background-color: #444; /* Mantener el color bloqueado al pasar el cursor */
+    color: #aaa;
+}
+
+.gift-locked i::before {
+    content: '\f023'; /* Icono de candado (usando FontAwesome) */
+}
+
+.gift-locked i {
+    margin-right: 5px;
+}
+
+
+
+
+
