@@ -1,5 +1,5 @@
 // Número total de imágenes en la carpeta galeria
-const totalImages = 11; // Ajusta este número según la cantidad de imágenes
+const totalImages = 12; // Ajusta este número según la cantidad de imágenes
 
 // Función para cargar las imágenes de la carpeta galeria
 function loadGalleryImages() {
