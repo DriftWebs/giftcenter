@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 /* Barra lateral flotante */
@@ -23,6 +24,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    z-index: 1000;
 }
 
 .sidebar-btn {
@@ -47,6 +49,9 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    width: 100%;
+    padding: 20px; /* Añadido padding para que no choque con los lados */
+    box-sizing: border-box; /* Asegura que el padding no expanda el contenedor */
 }
 
 /* Estilo principal */
@@ -58,6 +63,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 1000px; /* Limitar el ancho máximo del contenedor */
 }
 
 /* Estilo para el título */
@@ -72,6 +79,7 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 800px; /* Opcional: ajusta el ancho máximo del contenedor de botones */
+    width: 100%;
 }
 
 /* Botones de regalo */
@@ -114,31 +122,6 @@ h1 {
     font-weight: 500;
 }
 
-/* Botones de regalo */
-.gift-btn {
-    background-color: #555; /* Fondo oscuro para botones */
-    color: #00bcd4; /* Texto claro */
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-.gift-btn i {
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-}
-
-.gift-btn:hover {
-    background-color: #00bcd4; /* Celeste */
-    color: #1e1e1e; /* Texto oscuro */
-}
-
-
 /* Estilo para el contenedor de perfil */
 .profile-container {
     text-align: center;
@@ -153,7 +136,6 @@ h1 {
     object-fit: cover; /* Ajustar imagen al contenedor */
     margin-bottom: 15px; /* Espacio debajo de la imagen */
 }
-
 
 .profile-name {
     font-size: 24px;
@@ -248,6 +230,63 @@ h1 {
     margin-right: 5px;
 }
 
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto; /* Ajuste de altura para que funcione bien en móviles */
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .container {
+        margin-left: 0;
+        padding-top: 20px;
+        width: 100%;
+        padding: 20px; /* Padding extra para que no choque con los lados */
+        box-sizing: border-box;
+    }
+
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .gift-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+
+    #gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .gift-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+
+    #gallery {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        padding: 10px; /* Más padding para pantallas pequeñas */
+    }
+}
 
 
 
