@@ -7,8 +7,9 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 /* Barra lateral flotante */
@@ -23,6 +24,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    z-index: 1000;
 }
 
 .sidebar-btn {
@@ -41,37 +43,40 @@ body {
 
 /* Contenedor principal */
 .container {
-    margin-left: 60px; /* Ajusta esto si es necesario para dar espacio a la barra lateral */
+    margin-left: 60px; /* Ajusta para dar espacio a la barra lateral */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
 }
 
-/* Estilo principal */
+/* Contenido principal */
 .main-content {
     background-color: #2c2c2c; /* Fondo oscuro */
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
 }
 
-/* Estilo para el título */
+/* Título */
 h1 {
     color: #00bcd4; /* Celeste */
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 /* Cuadrícula de botones */
 .gift-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Máximo de 3 columnas por fila */
     gap: 10px;
-    max-width: 800px; /* Opcional: ajusta el ancho máximo del contenedor de botones */
+    width: 100%;
 }
 
 /* Botones de regalo */
@@ -86,7 +91,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .gift-btn:hover {
@@ -94,13 +99,13 @@ h1 {
     color: #1e1e1e; /* Texto oscuro */
 }
 
-/* Estilo para el contenedor de la fecha actual */
+/* Contenedor de la fecha actual */
 #current-date-container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 1rem;
     color: #00bcd4; /* Color celeste */
 }
 
@@ -109,35 +114,10 @@ h1 {
 }
 
 #current-date {
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #e0e0e0; /* Texto claro */
     font-weight: 500;
 }
-
-/* Botones de regalo */
-.gift-btn {
-    background-color: #555; /* Fondo oscuro para botones */
-    color: #00bcd4; /* Texto claro */
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-.gift-btn i {
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-}
-
-.gift-btn:hover {
-    background-color: #00bcd4; /* Celeste */
-    color: #1e1e1e; /* Texto oscuro */
-}
-
 
 /* Estilo para el contenedor de perfil */
 .profile-container {
@@ -145,36 +125,38 @@ h1 {
     padding: 20px;
 }
 
-/* Estilo para la imagen de perfil */
+/* Imagen de perfil */
 .profile-img {
-    width: 150px; /* Ancho de la imagen */
-    height: 150px; /* Alto de la imagen */
-    border-radius: 50%; /* Imagen circular */
-    object-fit: cover; /* Ajustar imagen al contenedor */
-    margin-bottom: 15px; /* Espacio debajo de la imagen */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
-
+/* Nombre de perfil */
 .profile-name {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #00bcd4; /* Celeste */
     margin: 10px 0;
 }
 
+/* Nombre del compañero */
 .profile-partner {
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #e0e0e0; /* Texto claro */
 }
 
+/* Contador de días */
 #days-together {
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #e0e0e0; /* Texto claro */
     margin-top: 20px;
 }
 
-/* Estilo para el contador de tiempo restante hasta el próximo 24 */
+/* Contador de tiempo restante hasta el próximo 24 */
 #time-until-next-date {
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #e0e0e0; /* Texto claro */
     margin-top: 20px;
     text-align: center;
@@ -186,8 +168,8 @@ h1 {
 #time-until-next-date p {
     margin: 0;
     padding: 5px;
-    background-color: #333; /* Fondo oscuro para los elementos */
-    border-radius: 5px; /* Bordes redondeados */
+    background-color: #333; /* Fondo oscuro */
+    border-radius: 5px;
     display: flex;
     align-items: center;
 }
@@ -197,46 +179,45 @@ h1 {
     margin-right: 5px;
 }
 
-/* Estilo para el contenedor de la galería */
+/* Galería */
 .gallery-container {
     padding: 20px;
 }
 
-/* Estilo para el contenedor de las imágenes en cuadrícula */
+/* Cuadrícula de imágenes */
 #gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
-    gap: 10px; /* Espacio entre las imágenes */
-    justify-content: center; /* Centrar la cuadrícula */
-    max-width: 1000px; /* Ajusta el ancho máximo según tu preferencia */
-    margin: 0 auto; /* Centrar el contenedor */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptable a pantallas grandes y pequeñas */
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* Estilo para las imágenes de la galería */
+/* Imágenes de la galería */
 .gallery-img {
-    width: 100%; /* Ajusta el tamaño según el contenedor */
+    width: 100%;
     height: auto;
-    border: 2px solid #00bcd4; /* Borde celeste para las imágenes */
+    border: 2px solid #00bcd4; /* Borde celeste */
     border-radius: 8px;
     object-fit: cover;
-    cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
+    cursor: pointer;
 }
 
 /* Botones de regalo vistos */
 .gift-seen {
-    background-color: #333; /* Un color diferente para los vistos */
-    color: white; /* Color verde para los vistos */
+    background-color: #333;
+    color: white;
 }
 
 /* Botones de regalo bloqueados */
 .gift-locked {
-    background-color: #444; /* Color gris oscuro para indicar que está bloqueado */
-    color: #aaa; /* Texto en gris claro */
-    cursor: not-allowed; /* Cambiar el cursor para indicar que está deshabilitado */
+    background-color: #444;
+    color: #aaa;
+    cursor: not-allowed;
 }
 
 .gift-locked:hover {
-    background-color: #444; /* Mantener el color bloqueado al pasar el cursor */
+    background-color: #444;
     color: #aaa;
 }
 
@@ -248,7 +229,44 @@ h1 {
     margin-right: 5px;
 }
 
+/* Media queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        padding: 10px;
+    }
 
+    .main-content {
+        padding: 15px;
+    }
 
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
 
+    h1 {
+        font-size: 1.5rem;
+    }
 
+    /* Aquí reducimos a 2 columnas en pantallas medianas */
+    .gift-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media queries para dispositivos aún más pequeños */
+@media (max-width: 480px) {
+    /* Para pantallas muy pequeñas, reducimos a 1 columna */
+    .gift-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
