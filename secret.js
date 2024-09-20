@@ -1,5 +1,5 @@
 const testcode = "test"; // Código de prueba
-const boda = "080524"; // Código para imagen 1
+const primermes = "240624"; // Código para imagen 1
 const nosotros = "driv"; // Código para imagen 2
 const blue = "413211"; // Código para imagen 3
 const pixelart = "aseprite"; // Código para imagen 4
@@ -26,13 +26,13 @@ submitButton.addEventListener("click", function() {
         messageDiv.style.color = "#00ff7f";
         messageDiv.textContent = "Mostrando imagen...";
         setTimeout(() => {
-            window.open("img/secret/boda.png", "_blank"); // abre un render extra de Stardew del primer mes
+            window.open("img/secret/primer.png", "_blank"); // abre un render no utilizado el primer mes
         }, 1000);
     } else if (userCode === nosotros) {
         messageDiv.style.color = "#00ff7f";
         messageDiv.textContent = "Mostrando imagen...";
         setTimeout(() => {
-            window.open("img/secret/nosotros.png", "_blank"); // Abre un render no utilizado
+            window.open("img/secret/driv.png", "_blank"); // Abre un render muy bonito, que no termine antes
         }, 1000);
     } else if (userCode === blue) {
         messageDiv.style.color = "#00ff7f";
