@@ -22,7 +22,7 @@ submitButton.addEventListener("click", function() {
         setTimeout(() => {
             window.location.href = "https://www.youtube.com/watch?v=qLuc8kZty1A"; // Redirige después de un pequeño delay
         }, 1500);
-    } else if (userCode === boda) {
+    } else if (userCode === primermes) {
         messageDiv.style.color = "#00ff7f";
         messageDiv.textContent = "Mostrando imagen...";
         setTimeout(() => {
