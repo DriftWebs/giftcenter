@@ -1,10 +1,11 @@
 const testcode = "test"; // Código de prueba
-const primermes = "240624"; // Código para imagen 1
-const nosotros = "driv"; // Código para imagen 2
-const blue = "413211"; // Código para imagen 3
-const pixelart = "aseprite"; // Código para imagen 4
-const religion = "canelita"; // Código para imagen 4
+const primermes = "240624"; // Código para abrir un extra antiguo del primer mes
+const nosotros = "driv"; // Código para abrir render especial para nosotros
+const blue = "413211"; // Código para abrir extra del otro dibujo
+const pixelart = "aseprite"; // Código para abrir imagen pixelart antiguo
+const religion = "canelita"; // Código para abrir imagen de canelita
 const codes = "codigos"; // Código para abrir codes.txt
+const fantasmas = "544179"; // codigo para abrir imagen de fantasmas.png
 
 const submitButton = document.getElementById("submitCode");
 const codeInput = document.getElementById("codeInput");
@@ -57,6 +58,12 @@ submitButton.addEventListener("click", function() {
         messageDiv.textContent = "Abriendo archivo de texto...";
         setTimeout(() => {
             window.open("img/secret/canelita.png", "_blank"); // Abre un extra modelo de canelita
+        }, 1000);
+    } else if (userCode === fantasmas) {
+        messageDiv.style.color = "#00ff7f";
+        messageDiv.textContent = "Abriendo archivo de texto...";
+        setTimeout(() => {
+            window.open("img/secret/fantasmas.png", "_blank"); // Abre un extra modelo de canelita
         }, 1000);
     } else {
         messageDiv.style.color = "#ff5252";
