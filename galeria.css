@@ -1,13 +1,24 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Fondo oscuro */
+    background-color: #121212;
     color: #e0e0e0;
     margin: 0;
     display: flex;
-    height: 100vh; /* Altura total de la vista */
-    overflow: hidden; /* Evitar barras de desplazamiento del body */
-    flex-direction: row; /* Mantener la dirección de flex en filas */
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: row;
+    animation: fadeInBody 1.5s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación de aparición */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .sidebar {
@@ -22,7 +33,18 @@ body {
     align-items: center;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: width 0.3s; /* Transición suave para cambios */
+    transition: width 0.3s;
+    animation: slideInSidebar 1s ease-in-out; /* Animación de deslizamiento lateral */
+}
+
+/* Animación de deslizamiento lateral */
+@keyframes slideInSidebar {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 .sidebar-btn {
@@ -32,6 +54,20 @@ body {
     cursor: pointer;
     transition: color 0.3s, transform 0.3s;
     text-decoration: none;
+    opacity: 0;
+    animation: fadeInSidebarBtn 1.3s ease-in-out 0.5s forwards; /* Aparición retardada */
+}
+
+/* Aparición retardada para botones de la barra lateral */
+@keyframes fadeInSidebarBtn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sidebar-btn:hover {
@@ -40,14 +76,27 @@ body {
 }
 
 .container {
-    margin-left: 70px; /* Ajuste para el nuevo ancho de la barra lateral */
+    margin-left: 70px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto; /* Permitir el desplazamiento vertical */
-    flex-grow: 1; /* Permitir que el contenedor ocupe el espacio disponible */
-    justify-content: center; /* Centrar contenido verticalmente */
+    overflow-y: auto;
+    flex-grow: 1;
+    justify-content: center;
+    animation: fadeInUp 1.2s ease-in-out 0.7s both; /* Animación de deslizamiento hacia arriba */
+}
+
+/* Animación de deslizamiento hacia arriba */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .main-content {
@@ -59,13 +108,38 @@ body {
     align-items: center;
     width: auto;
     max-width: 1000px;
-    margin: auto; /* Centrar el contenedor principal horizontalmente */
+    margin: auto;
+    animation: zoomInMainContent 1.5s ease-in-out 0.9s both; /* Animación de zoom */
+}
+
+/* Animación de zoom */
+@keyframes zoomInMainContent {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 h1 {
     color: #00bcd4;
     text-align: center;
     margin-bottom: 20px;
+    animation: fadeInText 1.5s ease-in-out 1s both; /* Aparición gradual para el texto */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .gallery-container {
@@ -76,40 +150,71 @@ h1 {
 
 #gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 5px; /* Espacio entre imágenes */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
     width: 100%;
-    max-width: 1000px; 
-    margin: 0 auto; /* Centrar la cuadrícula */
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeInGrid 1.8s ease-in-out 1.2s both; /* Animación de aparición para la galería */
+}
+
+/* Animación de aparición para la galería */
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Ajustes de las imágenes */
 #gallery img {
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transición suave al hacer hover */
+    opacity: 0;
+    animation: fadeInImage 2s ease-in-out 1.3s forwards; /* Aparición gradual para las imágenes */
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#gallery img:hover {
+    transform: scale(1.05); /* Zoom leve al hacer hover */
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* Cambiar a columna en móviles */
+        flex-direction: column;
     }
-	
+
     .sidebar {
         position: relative;
-        width: 100%; /* Barra lateral ocupa el ancho completo */
-        height: auto; /* Altura automática */
-        flex-direction: row; /* Disposición horizontal */
+        width: 100%;
+        height: auto;
+        flex-direction: row;
         justify-content: space-around;
         padding: 10px 0;
     }
 
     .container {
-        margin-left: 0; /* Eliminar margen izquierdo */
-        padding-top: 20px; /* Espaciado superior */
-        flex-grow: 1; /* Permitir que el contenedor crezca */
-        justify-content: flex-start; /* Alinear al inicio en móviles */
+        margin-left: 0;
+        padding-top: 20px;
+        flex-grow: 1;
+        justify-content: flex-start;
     }
 
     #gallery {
@@ -119,6 +224,6 @@ h1 {
 
 @media (max-width: 480px) {
     #gallery {
-        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+        grid-template-columns: 1fr;
     }
 }

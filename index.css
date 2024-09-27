@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Fondo más oscuro */
+    background-color: #121212;
     color: #e0e0e0;
     margin: 0;
     display: flex;
@@ -9,59 +9,133 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 70px; /* Ancho aumentado para un aspecto más moderno */
+    width: 70px;
     height: 100%;
-    background-color: #1e1e1e; /* Fondo mejorado */
+    background-color: #1e1e1e;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    animation: slideInLeft 1s ease-in-out; /* Animación de deslizamiento lateral */
+}
+
+/* Animación de deslizamiento lateral */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 .sidebar-btn {
     color: #e0e0e0;
-    font-size: 28px; /* Tamaño de icono aumentado */
+    font-size: 28px;
     margin: 20px 0;
     cursor: pointer;
     transition: color 0.3s, transform 0.3s;
     text-decoration: none;
+    opacity: 0;
+    animation: fadeInSidebarBtn 1.5s ease-in-out 0.5s forwards; /* Aparición retardada */
+}
+
+/* Aparición retardada para botones de la barra lateral */
+@keyframes fadeInSidebarBtn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sidebar-btn:hover {
     color: #00bcd4;
-    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+    transform: scale(1.1);
 }
 
 .container {
-    margin-left: 70px; /* Ajuste para el nuevo ancho de la barra lateral */
+    margin-left: 70px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
+    animation: fadeInUp 1s ease-in-out 0.7s both; /* Animación de deslizamiento hacia arriba */
+}
+
+/* Animación de deslizamiento hacia arriba */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .main-content {
-    background-color: #2a2a2a; /* Fondo principal más claro */
+    background-color: #2a2a2a;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto; /* Cambiado a auto para ajustar al contenido */
-    max-width: 1000px; /* Limitar el ancho máximo */
-    overflow-y: hidden; /* Evitar el desbordamiento */
+    width: auto;
+    max-width: 1000px;
+    overflow-y: hidden;
+    animation: zoomIn 1s ease-in-out 0.9s both; /* Animación de zoom */
+}
+
+/* Animación de zoom */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 h1 {
     color: #00bcd4;
     text-align: center;
+    animation: fadeInText 1.2s ease-in-out 1s both; /* Aparición gradual para el título */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .gift-grid {
@@ -71,10 +145,22 @@ h1 {
     max-width: 800px;
     width: 100%;
     flex-grow: 1;
+    animation: fadeInGrid 1.3s ease-in-out 1.2s both; /* Animación de aparición para la cuadrícula */
+}
+
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .gift-btn {
-    background-color: #444; /* Fondo oscuro para botones */
+    background-color: #444;
     color: #e0e0e0;
     border: none;
     padding: 15px;
@@ -86,6 +172,19 @@ h1 {
     justify-content: center;
     font-size: 16px;
     text-decoration: none;
+    opacity: 0;
+    animation: fadeInGiftBtn 1.5s ease-in-out 1.4s forwards; /* Aparición gradual para los botones */
+}
+
+@keyframes fadeInGiftBtn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .gift-btn:hover {
@@ -94,7 +193,7 @@ h1 {
 }
 
 .gift-locked {
-    background-color: #555; /* Color para botones bloqueados */
+    background-color: #555;
     color: #aaa;
     cursor: not-allowed;
 }
@@ -106,6 +205,18 @@ h1 {
     margin-top: 20px;
     font-size: 16px;
     color: #00bcd4;
+    animation: fadeInDate 1.3s ease-in-out 1.5s forwards; /* Aparición gradual para la fecha */
+}
+
+@keyframes fadeInDate {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #current-date-container i {
