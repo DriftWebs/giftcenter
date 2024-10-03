@@ -1,0 +1,200 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    height: 100vh; /* Altura total de la vista */
+    overflow: hidden; /* Evitar barras de desplazamiento del body */
+	animation: fadeIn 1.5s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    animation: slideInLeft 1s ease-in-out; /* Animación de deslizamiento lateral */	
+}
+
+/* Animación de deslizamiento lateral */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.sidebar-btn {
+    color: #e0e0e0;
+    font-size: 28px;
+    margin: 20px 0;
+    cursor: pointer;
+    text-decoration: none;
+    animation: fadeInSidebarBtn 1.5s ease-in-out 0.5s forwards; /* Aparición retardada */	
+}
+
+/* Aparición retardada para botones de la barra lateral */
+@keyframes fadeInSidebarBtn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.sidebar-btn:hover {
+    color: yellow;
+    font-size: 28px;
+    margin: 20px 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* Centrado de la pantalla y estilo del contenedor principal */
+.container {
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeInUp 1s ease-in-out 0.7s both; /* Animación de deslizamiento hacia arriba */	
+}
+
+/* Animación de deslizamiento hacia arriba */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content {
+    background-color: #2a2a2a;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centrar el contenido de texto */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px; /* Tamaño máximo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #625c03;
+    animation: zoomIn 1s ease-in-out 0.9s both; /* Animación de zoom */
+}
+
+/* Animación de zoom */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+	font-size: 40px;
+    animation: fadeInText 1.2s ease-in-out 1s both; /* Aparición gradual para el título */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para el contador */
+#countdown {
+    font-size: 48px;
+    color: yellow; /* Color verde brillante estilo técnico */
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Alineación vertical con el icono */
+    gap: 10px; /* Espacio entre el icono y el texto */
+    text-transform: uppercase; /* Mayúsculas para un look más técnico */
+    letter-spacing: 1px;
+    animation: zoomIn 1s ease-in-out 0.9s both; /* Animación de zoom */
+}
+
+/* Icono del reloj */
+#countdown i {
+    font-size: 64px; /* Tamaño grande para el icono del reloj */
+    color: yellow;
+}
+
+/* Efecto flicker (parpadeo) técnico */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Cambiar a columna en móviles */
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%; /* Barra lateral ocupa el ancho completo */
+        height: auto; /* Altura automática */
+        flex-direction: row; /* Disposición horizontal */
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .container {
+        margin-left: 0; /* Eliminar margen izquierdo */
+        height: auto;
+        padding-top: 20px; /* Espaciado superior */
+    }
+}

@@ -162,7 +162,7 @@ h1 {
 .gift-btn {
     background-color: #444;
     color: #e0e0e0;
-    border: none;
+    border: 2px solid #00bcd4;
     padding: 15px;
     border-radius: 8px;
     cursor: pointer;
@@ -175,6 +175,29 @@ h1 {
     opacity: 0;
     animation: fadeInGiftBtn 1.5s ease-in-out 1.4s forwards; /* Aparición gradual para los botones */
 }
+
+.gift-next {
+    background-color: #444;
+    color: #e0e0e0;
+    border: 2px solid #625c03;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeInGiftBtn 1.5s ease-in-out 1.4s forwards; /* Aparición gradual para los botones */
+}
+
+.gift-next:hover {
+    background-color: yellow;
+    color: #1e1e1e;
+}
+
 
 @keyframes fadeInGiftBtn {
     from {
@@ -193,10 +216,30 @@ h1 {
 }
 
 .gift-locked {
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeInGiftBtn 1.5s ease-in-out 1.4s forwards; /* Aparición gradual para los botones */
     background-color: #555;
     color: #aaa;
     cursor: not-allowed;
+	border: 2px solid #331919;
 }
+
+.gift-locked:hover {
+    background-color: #331919;
+    color: #aaa;
+    cursor: not-allowed;
+	border: 2px solid #331919;
+}
+
 
 #current-date-container {
     display: flex;

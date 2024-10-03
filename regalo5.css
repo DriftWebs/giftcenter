@@ -1,0 +1,113 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Evitar barras de desplazamiento del body */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-btn {
+    color: #e0e0e0;
+    font-size: 28px;
+    margin: 20px 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container {
+    margin-left: 70px; /* Ajuste para el nuevo ancho de la barra lateral */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permitir el desplazamiento vertical */
+    flex-grow: 1; /* Permitir que el contenedor ocupe el espacio disponible */
+    justify-content: center; /* Centrar contenido verticalmente */
+}
+
+.main-content {
+    background-color: #2a2a2a;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+h1 {
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de imágenes */
+.large-image-container {
+    margin-bottom: 20px; /* Espacio entre la imagen grande y las pequeñas */
+}
+
+.large-image-container img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    max-width: 500px; /* Limita el tamaño máximo de la imagen grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.comic-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila */
+    gap: 20px; /* Espacio entre las imágenes */
+    max-width: 100%; /* Asegúrate que se ajuste al contenedor */
+}
+
+.comic-images img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el contenedor */
+    max-width: 300px; /* Limita el tamaño máximo de cada imagen pequeña */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Cambiar a columna en móviles */
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%; /* Barra lateral ocupa el ancho completo */
+        height: auto; /* Altura automática */
+        flex-direction: row; /* Disposición horizontal */
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .container {
+        margin-left: 0; /* Eliminar margen izquierdo */
+        padding-top: 20px; /* Espaciado superior */
+        flex-grow: 1; /* Permitir que el contenedor crezca */
+        justify-content: flex-start; /* Alinear al inicio en móviles */
+    }
+
+    .comic-images {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}
