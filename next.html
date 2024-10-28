@@ -16,7 +16,7 @@
     <!-- Contenedor principal -->
     <div class="container">
         <main class="main-content">
-			<h1> REGALO 5 </h1>
+			<h1> REGALO 6 </h1>
 			<div id="countdown"><i class="fas fa-clock"></i></div>
         </main>
     </div>
@@ -26,7 +26,7 @@
 		const countdown = document.getElementById('countdown');
 		const finalMessage = document.getElementById('finalMessage');
 
-		const targetDate = new Date('2024-10-24T00:00:00').getTime();
+		const targetDate = new Date('2024-11-24T00:00:00').getTime();
 
 		const countdownInterval = setInterval(function() {
 			const now = new Date().getTime();
@@ -38,7 +38,7 @@
 
 				// Redirigir a regalo.html después de 3 segundos (ajustable)
 				setTimeout(function() {
-					window.location.href = 'regalo5.html';
+					window.location.href = 'regalo6.html';
 				}, 3000); // Cambia el tiempo si quieres que sea más rápido o lento
 				
 				return;

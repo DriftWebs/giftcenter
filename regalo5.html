@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Diálogos</title>
-    <link rel="stylesheet" href="regalo5.css"> <!-- Agregar tu archivo CSS -->
+    <title>Regalo 5</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Estilo global -->
+    <link rel="stylesheet" href="regalo5.css"> <!-- Estilo específico para regalo1.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="dialog-container">
-        <div id="dialogue" class="dialogue">
-            <p id="dialogue-text">¡Bienvenido a la aventura!</p>
-        </div>
-        <div class="options" id="options-container">
-            <!-- Las opciones se generarán aquí -->
-        </div>
+    <!-- Barra lateral flotante -->
+    <aside class="sidebar">
+        <a href="index.html" class="sidebar-btn"><i class="fas fa-home"></i></a>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <main class="main-content">
+            <h1>Regalo 5: el tiempo pasa volando...</h1>
+            <div class="slider">
+                <div class="slide">
+                    <img src="img/5meses1.png" alt="Imagen 1">
+                </div>
+                <div class="slide">
+                    <img src="img/5meses2.png" alt="Imagen 2">
+                </div>
+                <div class="slide">
+                    <img src="img/5meses3.png" alt="Imagen 3">
+                </div>
+                <div class="slide">
+                    <img src="img/5meses4.png" alt="Imagen 4">
+                </div>
+                <div class="slide">
+                    <img src="img/5meses5.png" alt="Imagen 5">
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+			<a href="dialogo_regalo5.html" class="redirect-btn" target="_blank">Dialogo Regalo 5</a>
+            <a href="https://online.fliphtml5.com/vgvsv/omff/" class="redirect-btn" target="_blank">Driv - Ancient City (Comic)</a>
+			<a href="https://youtu.be/d_oGRUtEDKU" class="redirect-btn" target="_blank">Driv - Universos (Video)</a>
+        </main>
     </div>
-    
-    <script src="regalo5.js"></script> <!-- Agregar tu archivo JavaScript -->
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="../script.js"></script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            const slides = document.querySelectorAll('.slide');
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            showSlides();
+        }
+    </script>
 </body>
 </html>
