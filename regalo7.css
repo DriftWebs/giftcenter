@@ -1,0 +1,144 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2e2e2e; /* Gris oscuro */
+    color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Evitar barras de desplazamiento del body */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    background-color: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    border-right: 2px solid #5a5a5a;
+}
+
+.sidebar-btn {
+    color: #f5f5f5;
+    font-size: 28px;
+    margin: 20px 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar-btn:hover {
+    color: #ff5757; /* Rojo festivo */
+}
+
+.container {
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.main-content {
+    background-color: #404040; /* Gris más claro */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid #5a5a5a;
+}
+
+h1 {
+    color: white; /* Naranja cálido */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* Fuente con estilo más clásico */
+}
+
+/* Estilos para el slider */
+.slider {
+    position: relative;
+    max-width: 70%;
+    margin: 20px 0;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff9e57;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.redirect-btn {
+    margin-top: 20px;
+    background-color: #575757; /* Gris neutro */
+    color: white; /* Naranja cálido */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.redirect-btn:hover {
+    background-color: #ff5757; /* Rojo navideño */
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .container {
+        margin-left: 0;
+        padding-top: 20px;
+        justify-content: flex-start;
+    }
+}
